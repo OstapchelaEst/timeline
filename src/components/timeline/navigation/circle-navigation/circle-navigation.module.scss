@@ -1,0 +1,98 @@
+.wrapper {
+  position: absolute;
+  z-index: 20;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle {
+  position: relative;
+
+  width: 53rem;
+  height: 53rem;
+  border-radius: 100%;
+
+  border: $line-size solid $color-circle;
+}
+
+.button_wrapper {
+  position: absolute;
+  z-index: 10;
+  transform-origin: center center;
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 10;
+  transform-origin: center center;
+  overflow: hidden;
+
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 100%;
+  border: $line-size solid $color-border-secondary;
+
+  background-color: $color-text;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3rem;
+  color: $color-text;
+
+  transition: width 0.5s ease 0s, height 0.5s ease 0s, transform 0s ease 0s;
+
+  cursor: pointer;
+
+  @media (any-hover: hover) {
+    &:hover {
+      transition: width 0.5s ease 0s, height 0.5s ease 0s,
+        background-color 0.3s ease 0.2s, transform 0s ease 0s;
+      background-color: $color-bg;
+
+      width: 5.6rem;
+      height: 5.6rem;
+    }
+  }
+
+  .active & {
+    transition: width 0.5s ease 0s, height 0.5s ease 0s,
+      background-color 0.3s ease 0.2s, transform 0s ease 0s;
+    background-color: $color-bg;
+
+    width: 5.6rem;
+    height: 5.6rem;
+  }
+
+  &_title {
+    position: absolute;
+    top: 50%;
+    right: -5rem;
+    transform: translateY(-50%) translateX(100%);
+
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 3rem;
+    opacity: 0;
+  }
+}
+
+@media (max-width: $tablet) {
+  .circle {
+    width: 40rem;
+    height: 40rem;
+  }
+}
+
+@media (max-width: $mobile) {
+  .wrapper {
+    display: none;
+  }
+}

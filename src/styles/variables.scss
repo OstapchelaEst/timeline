@@ -1,0 +1,36 @@
+$laptop: 90rem;
+$tablet: 65rem;
+$mobile: 40rem;
+
+$color-bg: #f4f5f9;
+$color-text: #42567a;
+$color-text-muted: #42567a80;
+$color-accent-blue: #3877ee;
+$color-accent-pink: #ef5da8;
+
+$color-line: #42567b1a;
+$color-circle: #42567a33;
+
+$color-border: #42567a50;
+$color-border-secondary: #303e5880;
+$color-border-muted: #42567a50;
+
+$line-size: 0.1rem;
+
+$page-container-max-width: 144rem;
+
+:root {
+  --page-x-padding: 8rem;
+}
+
+@media (max-width: $tablet) {
+  :root {
+    --page-x-padding: 4rem;
+  }
+}
+
+@media (max-width: $mobile) {
+  :root {
+    --page-x-padding: 0rem;
+  }
+}

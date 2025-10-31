@@ -1,0 +1,158 @@
+.swiper {
+  position: relative;
+  margin-inline: calc(-1 * var(--page-x-padding)) !important;
+  padding-inline: var(--page-x-padding) !important;
+
+  & :global(.swiper-wrapper) {
+    z-index: 1;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: var(--page-x-padding);
+    height: 100%;
+    top: 0;
+    z-index: 2;
+    background-color: $color-bg;
+  }
+
+  &::after {
+    left: 0rem;
+  }
+
+  &::before {
+    right: 0rem;
+  }
+
+  & :global(.swiper-button-prev),
+  & :global(.swiper-button-next) {
+    transition: opacity 0.3s ease 0s;
+
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    transform: translateY(-50%);
+
+    box-shadow: 0rem 0rem 1.5rem 0rem #3877ee1a;
+    background-color: white;
+
+    cursor: pointer;
+    outline: none;
+    border: none;
+
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & svg {
+      stroke: $color-accent-blue;
+
+      width: 0.5rem;
+      height: 1rem;
+    }
+  }
+
+  & :global(.swiper-button-prev) {
+    left: 2rem;
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  & :global(.swiper-button-next) {
+    right: 2rem;
+  }
+
+  & :global(.swiper-button-disabled) {
+    transition-duration: 0s;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.slide {
+  cursor: default;
+
+  & .title {
+    font-family: 'Bebas Neue';
+    font-weight: 400;
+    font-size: 2.5rem;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: $color-accent-blue;
+    margin-bottom: 1.5rem;
+  }
+
+  & .text {
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 145%;
+  }
+}
+
+.mobile_title {
+  font-size: 1.6rem;
+  line-height: 120%;
+
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+
+  border-bottom: 1px solid $color-border;
+
+  display: none;
+}
+
+@media (max-width: $tablet) {
+  .swiper {
+    & :global(.swiper-button-prev) {
+      left: 0.5rem;
+    }
+
+    & :global(.swiper-button-next) {
+      right: 0.5rem;
+    }
+
+    & :global(.swiper-button-prev),
+    & :global(.swiper-button-next) {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .swiper {
+    width: calc(100% + 2rem);
+
+    & :global(.swiper-slide-next),
+    & :global(.swiper-slide-prev) {
+      transition: opacity 0.3s ease 0s;
+      opacity: 0.4;
+    }
+
+    & :global(.swiper-button-prev),
+    & :global(.swiper-button-next) {
+      display: none;
+    }
+  }
+
+  .slide {
+    & .title {
+      font-size: 1.6rem;
+      line-height: 120%;
+      margin-bottom: 1.5rem;
+    }
+
+    & .text {
+      font-size: 1.4rem;
+    }
+  }
+
+  .mobile_title {
+    display: block;
+  }
+}

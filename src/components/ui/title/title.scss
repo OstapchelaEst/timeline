@@ -1,0 +1,40 @@
+.title {
+  font-weight: 700;
+  line-height: 120%;
+  font-size: 5.6rem;
+  position: relative;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    width: 0.6rem;
+    height: 100%;
+    top: 0;
+    left: calc(-1 * var(--page-x-padding));
+
+    background: linear-gradient(
+      180deg,
+      $color-accent-blue 0%,
+      $color-accent-pink 100%
+    );
+  }
+}
+
+@media (max-width: $tablet) {
+  .title {
+    font-size: 4rem;
+    line-height: 100%;
+  }
+}
+
+@media (max-width: $mobile) {
+  .title {
+    font-size: 2rem;
+    line-height: 120%;
+
+    &::after {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,124 @@
+.wrapper {
+  position: relative;
+}
+
+.progress {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 100%;
+
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  position: relative;
+  z-index: 30;
+
+  display: inline-flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  outline: none;
+
+  width: 5rem;
+  height: 5rem;
+
+  border-radius: 100%;
+  border: 0.1rem solid $color-border;
+
+  transition: background-color 0.3s ease 0s;
+
+  &.next {
+    transform: rotate(180deg);
+  }
+
+  & svg {
+    width: 0.825rem;
+    height: 1.45rem;
+
+    & * {
+      stroke: $color-text;
+    }
+  }
+
+  &:disabled {
+    border-color: $color-border-muted;
+    color: $color-text-muted;
+    pointer-events: none;
+    cursor: not-allowed;
+
+    & svg * {
+      stroke: $color-border-muted !important;
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: white;
+    }
+  }
+}
+
+.pagination {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: none;
+  align-items: center;
+
+  gap: 1rem;
+
+  &_button {
+    border: none;
+    outline: none;
+
+    width: 0.6rem;
+    height: 0.6rem;
+
+    border-radius: 100%;
+    background-color: $color-text;
+
+    transition: opacity 0.3s ease 0s;
+    opacity: 0.4;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .progress {
+    font-size: 1.4rem;
+    line-height: 100%;
+
+    margin-bottom: 1rem;
+  }
+
+  .buttons {
+    gap: 0.8rem;
+  }
+
+  .button {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    & svg {
+      width: 0.312rem;
+      height: 0.65rem;
+    }
+  }
+
+  .pagination {
+    display: flex;
+  }
+}

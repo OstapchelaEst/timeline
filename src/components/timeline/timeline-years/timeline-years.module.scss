@@ -1,0 +1,44 @@
+.years {
+  display: flex;
+  gap: 10rem;
+  justify-content: center;
+
+  font-weight: 700;
+  font-size: 20rem;
+  line-height: 16rem;
+  letter-spacing: -0.8rem;
+
+  padding-top: 9.6rem;
+  padding-bottom: 13.7rem;
+
+  position: relative;
+
+  pointer-events: none;
+}
+
+.start {
+  color: $color-accent-blue;
+}
+
+.end {
+  color: $color-accent-pink;
+}
+
+@media (max-width: $tablet) {
+  .years {
+    font-size: 12rem;
+    line-height: 12rem;
+    letter-spacing: -0.2rem;
+    gap: 5rem;
+  }
+}
+
+@media (max-width: $mobile) {
+  .years {
+    font-size: 5.6rem;
+    line-height: 100%;
+
+    padding-block: 5.6rem;
+    gap: 2.5rem;
+  }
+}
